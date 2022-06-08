@@ -1,13 +1,13 @@
 function envio() {
-    const nombreImput = document.getElementById("Nombre")
-    const montoImput = document.getElementById("Monto");
+    const nombre = document.getElementById("nombre")
+    const monto = document.getElementById("monto");
 
-    if (nombreImput != "" && montoImput.value != "") {
-        sumaTotal(montoImput.value);
-        addPeople(nombreImput, montoImput.value);
+    if (nombre != "" && monto.value != "") {
+        sumaTotal(monto.value);
+        agregarPersonas(nombre, monto.value);
 
-        nombreImput.value ="";
-        montoImput.value ="";
+        nombre.value ="";
+        monto.value ="";
     } 
     else {
         alert("Por favor, complete el formulario");
@@ -17,15 +17,15 @@ function envio() {
 let montoTotal = 0;
 
 function sumaTotal(monto) {
-    let totalTextContainer = document.getElementById("totalTextContainer");
+    let Total = document.getElementById("Total");
     montoTotal = montoTotal + parseInt (monto);
-    totalTextContainer.innerHTML = ' $ $ {montoTotal} ';
+    Total.innerHTML = ' $ {montoTotal} ';
 }
 
 let cantPeople = 0;
 
-const addPeople =(nombre, monto) => {
-    const resultados = document.getElementById("resultados");
+const agregarPersonas =(nombre, monto) => {
+    const Totales = document.getElementById("Totales");
     let persona = document.createElement("p");
     const texto = nombre + " : $" + monto;
     persona.innerHTML = texto;
@@ -33,7 +33,7 @@ const addPeople =(nombre, monto) => {
 
     cantPeople++;
 
-    const aPagarCU = document.getElementById("aPagarCadaUno");
-    const montoAPagarCU = parseINT(montoTotal) / cantPeople;
-    aPagarCU.innerHTML = "$" + montoAPagarCU;
+    const CUPaga = document.getElementById("CUPaga");
+    const montoAPagarCU = parseINT(montoAPagarCU) / cantPeople;
+    CUPaga.innerHTML = "$" + montoAPagarCU;
 }

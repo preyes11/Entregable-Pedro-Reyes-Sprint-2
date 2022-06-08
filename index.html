@@ -1,35 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entregable SPRINT 2 PEDRO REYES</title>
-</head>
-<body>
-  <div class="boton de radio">
-    <div class="llenado de datos">
-      <label for="input nombre" class="text-white">Ingrese nombre</label><input class="item gasto-monto" placeholder="Nombre" id="input-nombre" type="text">
-      <label for="input monto" class="text-white">Ingrese monto</label><input class="Item gasto-monto" placeholder="Gasto" id="input-monto" type="number">
-      <button class="boton primario" id="input-submit">Añadir</button>
-     </div>
-  
-     <div class="Respuestas">
-      <p class="text-white">Resultados</p>
-      <div class="Nombre y gasto">
-        <div class="Texto nombre y gasto">Nombre</div>
-        <div class="Texto nombre y gasto">Gasto ($)</div>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-      </div>  
-      <div id="Resultado">
+  <body>
+    <main>
+      <div class="container">
+        <div class="mt-5 mb-5 text-white">
+          <header class="text-center">
+            <h1 class="fw-bold display-4">Calculadora de Costos</h1>
+            <h4>Pagado por cada persona</h4>
+          </header>
+        </div>
 
+        <form class="row g-3 justify-content-center">
+          <div class="col-auto">
+            <input
+              type="text"
+              class="form-control"
+              id="nombre"
+              placeholder="Nombre"/>
+          </div>
+          <div class="col-auto">
+            <input
+              type="number"
+              class="form-control"
+              id="monto"
+              placeholder="Monto"/>
+          </div>
+
+          <!-- Boton -->
+
+          <div class="row justify-content-center mt-3">
+            <div class="col-10 col-md-5">
+              <button
+                type="button"
+                onclick="envio()"
+                class="btn btn-primary col-12">
+                Enviar
+              </button>
+            </div>
+          </div>
+          <div
+            class="container text-center bg-secondary bg-opacity-25 mt-5 rounded p-4"
+          >
+            <div class="text-white" id="resultados">
+              <h4>Resultados</h4>
+            </div>
+            <div class="text-white d-flex justify-content-center">
+              <h5>Total:</h5>
+              <h5 id="Total"></h5>
+            </div>
+
+            <div class="text-white">
+              <h5>Cada uno paga:</h5>
+              <h5 id="CUPaga"></h5>
+            </div>
+          </div>
+        </form>
+        <!--</form>-->
       </div>
-    </div>
-
-    <div class="Totales text-white">
-    <p>Total: $ <span id="Total">0.00</span></p>
-    <p>A pagar por cada uno: $ <span id="Division">0.00</span></p>
-  </div>
-    
-</body>
+    </main>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
 </html>
